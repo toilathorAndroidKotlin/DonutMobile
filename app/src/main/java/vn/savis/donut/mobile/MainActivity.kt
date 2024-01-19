@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var isShowPassword: Boolean = false
+    private var isSignInTab: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +74,26 @@ class MainActivity : AppCompatActivity() {
                 binding.edtPassword.transformationMethod =
                     PasswordTransformationMethod.getInstance()
             }
+        }
 
+        binding.btnMain.setOnClickListener {  }
+
+        binding.toggleSignUp.setOnClickListener {
+            if (isSignInTab) {
+                binding.toggleSignUp.isEnabled = false
+                binding.toggleSignIn.isEnabled = true
+                binding.btnMain.setText(binding.toggleSignUp.text)
+                isSignInTab = !isSignInTab
+            }
+        }
+
+        binding.toggleSignIn.setOnClickListener {
+            if (!isSignInTab) {
+                binding.toggleSignUp.isEnabled = true
+                binding.toggleSignIn.isEnabled =false
+                binding.btnMain.setText(binding.toggleSignIn.text)
+                isSignInTab = !isSignInTab
+            }
         }
     }
 }

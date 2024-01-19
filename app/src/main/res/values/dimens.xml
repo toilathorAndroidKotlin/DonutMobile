@@ -2,4 +2,6 @@
 <resources>
     <dimen name="fs10">10sp</dimen>
     <dimen name="fs8">8sp</dimen>
+    <dimen name="fs12">12sp</dimen>
+    <dimen name="pd8">8dp</dimen>
 </resources>

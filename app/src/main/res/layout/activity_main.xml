@@ -32,101 +32,193 @@
             android:src="@drawable/img_glazed"
             tools:ignore="ContentDescription" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="-28dp"
-            app:cardCornerRadius="34dp">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:orientation="vertical"
-                android:paddingHorizontal="45dp"
-                android:paddingTop="48dp"
-                android:paddingBottom="56dp">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="-28dp"
+                app:cardCornerRadius="34dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sign_in"
-                        app:layout_constraintEnd_toStartOf="@id/button2"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <Button
-                        android:id="@+id/button2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sign_up"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/button"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="@string/email"
-                    android:importantForAutofill="no"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/primaryTextColor"
-                    android:textColorHint="@color/hintTextColor"
-                    android:textSize="@dimen/fs10" />
-
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="45dp"
+                    android:paddingTop="48dp"
+                    android:paddingBottom="56dp">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/border_toggle_24_share">
+
+                        <Button
+                            android:id="@+id/toggleSignIn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/toggle_bg_selector"
+                            android:enabled="false"
+                            android:fontFamily="@font/poppins_medium"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingVertical="0dp"
+                            android:text="@string/sign_in"
+                            android:textAllCaps="false"
+                            android:textColor="@drawable/toggle_text_selector"
+                            android:textSize="@dimen/fs12"
+                            app:layout_constraintEnd_toStartOf="@id/toggleSignUp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/toggleSignUp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/toggle_bg_selector"
+                            android:enabled="true"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingVertical="0dp"
+                            android:text="@string/sign_up"
+                            android:textColor="@drawable/toggle_text_selector"
+                            android:textSize="@dimen/fs12"
+                            android:textAllCaps="false"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/toggleSignIn"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <EditText
-                        android:id="@+id/edtPassword"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:hint="@string/password"
+                        android:hint="@string/email"
                         android:importantForAutofill="no"
-                        android:inputType="numberPassword"
-                        android:paddingEnd="9dp"
+                        android:inputType="textEmailAddress"
                         android:textColor="@color/primaryTextColor"
                         android:textColorHint="@color/hintTextColor"
                         android:textSize="@dimen/fs10"
-                        tools:ignore="RtlSymmetry" />
+                        android:theme="@style/Theme.Material3.DayNight" />
 
-                    <ImageView
-                        android:id="@+id/showPassword"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edtPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="@string/password"
+                            android:importantForAutofill="no"
+                            android:inputType="numberPassword"
+                            android:paddingEnd="9dp"
+                            android:textColor="@color/primaryTextColor"
+                            android:textColorHint="@color/hintTextColor"
+                            android:textSize="@dimen/fs10"
+                            android:theme="@style/Theme.Material3.DayNight"
+                            tools:ignore="RtlSymmetry" />
+
+                        <ImageView
+                            android:id="@+id/showPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="-24dp"
+                            android:padding="4dp"
+                            android:src="@drawable/img_eye"
+                            tools:ignore="ContentDescription,ImageContrastCheck" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/forgot_password"
+                            android:textColor="@color/hintTextColor"
+                            android:textSize="@dimen/fs8"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TextContrastCheck" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <vn.savis.donut.mobile.UI.Components.PrimaryButton
+                            android:id="@+id/btnMain"
+                            android:text="@string/sign_in"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="62dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="59dp">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/hintTextColor"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="10dp"
+                            android:textColor="@color/hintTextColor"
+                            android:text="@string/or" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/hintTextColor" />
+                    </LinearLayout>
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="-24dp"
-                        android:padding="4dp"
-                        android:src="@drawable/img_eye"
-                        tools:ignore="ContentDescription,ImageContrastCheck" />
+                        android:layout_marginTop="35dp"
+                        android:layout_gravity="center">
+                        <ImageButton
+                            android:src="@drawable/img_facebook"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/pd8"
+                            android:background="@drawable/border_toggle_24_share"
+                            tools:ignore="ContentDescription" />
+                        <View
+                            android:layout_width="11dp"
+                            android:layout_height="wrap_content" />
+                        <ImageButton
+                            android:src="@drawable/img_google"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/pd8"
+                            android:background="@drawable/border_toggle_24_share"
+                            tools:ignore="ContentDescription" />
+                    </LinearLayout>
                 </LinearLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="@string/forgot_password"
-                        android:textColor="@color/hintTextColor"
-                        android:textSize="@dimen/fs8"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="TextContrastCheck" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
+                </ScrollView>
+            </androidx.cardview.widget.CardView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

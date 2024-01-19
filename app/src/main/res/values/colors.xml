@@ -9,4 +9,7 @@
     <color name="background">#FFF6F2</color>
     <color name="hintTextColor">#A8A7A7</color>
     <color name="primaryTextColor">#174C4F</color>
+    <color name="primaryButtonColor">#FF9666</color>
+    <color name="transparent">#00000000</color>
+    <color name="primaryButtonColor100">#FFC6AC</color>
 </resources>
