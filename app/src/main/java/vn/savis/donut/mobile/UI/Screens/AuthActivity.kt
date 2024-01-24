@@ -1,26 +1,30 @@
-package vn.savis.donut.mobile
+package vn.savis.donut.mobile.UI.Screens
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.Gravity
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import vn.savis.donut.mobile.databinding.ActivityMainBinding
+import vn.savis.donut.mobile.R
+import vn.savis.donut.mobile.databinding.ActivityAuthBinding
 import vn.savis.donut.mobile.utils.ScreenUtils
 
-class MainActivity : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityAuthBinding
     private var isShowPassword: Boolean = false
+    private var isShowConfirmPassword: Boolean = false
     private var isSignInTab: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        binding = ActivityAuthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setUpBackground()
         setAction()
@@ -76,13 +80,30 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnMain.setOnClickListener {  }
+        binding.showConfirmPassword.setOnClickListener {
+            if (isShowConfirmPassword) {
+                isShowConfirmPassword = false
+                binding.edtConfirmPassword.transformationMethod =
+                    HideReturnsTransformationMethod.getInstance()
+            } else {
+                isShowConfirmPassword = true
+                binding.edtConfirmPassword.transformationMethod =
+                    PasswordTransformationMethod.getInstance()
+            }
+        }
+
+        binding.btnMain.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.toggleSignUp.setOnClickListener {
             if (isSignInTab) {
                 binding.toggleSignUp.isEnabled = false
                 binding.toggleSignIn.isEnabled = true
                 binding.btnMain.setText(binding.toggleSignUp.text)
+                binding.pnConfirmPassword.visibility = VISIBLE
+                binding.btnForgotPassword.visibility = GONE
                 isSignInTab = !isSignInTab
             }
         }
@@ -92,6 +113,8 @@ class MainActivity : AppCompatActivity() {
                 binding.toggleSignUp.isEnabled = true
                 binding.toggleSignIn.isEnabled =false
                 binding.btnMain.setText(binding.toggleSignIn.text)
+                binding.pnConfirmPassword.visibility = GONE
+                binding.btnForgotPassword.visibility = VISIBLE
                 isSignInTab = !isSignInTab
             }
         }

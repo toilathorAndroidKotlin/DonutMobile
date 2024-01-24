@@ -6,4 +6,10 @@
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
     <string name="or">or</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="enter_email">Enter email</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+    <string name="rewards">Rewards</string>
+    <string name="orders">Orders</string>
 </resources>

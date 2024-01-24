@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+    <string name="rewards">Rewards</string>
+    <string name="orders">Orders</string>
+</resources>

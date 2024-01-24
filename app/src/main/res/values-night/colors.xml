@@ -4,4 +4,6 @@
     <color name="hintTextColor">#A8A7A7</color>
     <color name="primaryTextColor">#174C4F</color>
     <color name="primaryButtonColor100">#FFC6AC</color>
+    <color name="background_gradient_start">#FF9666</color>
+    <color name="background_gradient_end">#B0FF9666</color>
 </resources>

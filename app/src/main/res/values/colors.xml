@@ -12,4 +12,6 @@
     <color name="primaryButtonColor">#FF9666</color>
     <color name="transparent">#00000000</color>
     <color name="primaryButtonColor100">#FFC6AC</color>
+    <color name="background_gradient_start">#FF9666</color>
+    <color name="background_gradient_end">#B0FF9666</color>
 </resources>

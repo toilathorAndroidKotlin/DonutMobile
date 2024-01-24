@@ -26,7 +26,11 @@ class PrimaryButton @JvmOverloads constructor(
         }
     }
 
-    public fun setText(text: CharSequence) {
+    fun setText(text: CharSequence) {
         this.button.text = text
+    }
+
+    override fun setOnClickListener(l: OnClickListener?) {
+        this.button.setOnClickListener(l)
     }
 }

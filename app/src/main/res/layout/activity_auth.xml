@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".UI.Screens.AuthActivity">
+
+    <FrameLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/img_glazed"
+            tools:ignore="ContentDescription" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="-28dp"
+            app:cardCornerRadius="34dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="45dp"
+                    android:paddingTop="48dp"
+                    android:paddingBottom="56dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/border_toggle_24_share">
+
+                        <Button
+                            android:id="@+id/toggleSignIn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/toggle_bg_selector"
+                            android:enabled="false"
+                            android:fontFamily="@font/poppins_medium"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingVertical="0dp"
+                            android:text="@string/sign_in"
+                            android:textAllCaps="false"
+                            android:textColor="@drawable/toggle_text_selector"
+                            android:textSize="@dimen/fs12"
+                            app:layout_constraintEnd_toStartOf="@id/toggleSignUp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/toggleSignUp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/toggle_bg_selector"
+                            android:enabled="true"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingVertical="0dp"
+                            android:text="@string/sign_up"
+                            android:textAllCaps="false"
+                            android:textColor="@drawable/toggle_text_selector"
+                            android:textSize="@dimen/fs12"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/toggleSignIn"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="@string/enter_email"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/primaryTextColor"
+                        android:textColorHint="@color/hintTextColor"
+                        android:textSize="@dimen/fs10"
+                        android:theme="@style/Theme.Material3.DayNight" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edtPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="@string/password"
+                            android:importantForAutofill="no"
+                            android:inputType="numberPassword"
+                            android:paddingEnd="9dp"
+                            android:textColor="@color/primaryTextColor"
+                            android:textColorHint="@color/hintTextColor"
+                            android:textSize="@dimen/fs10"
+                            android:theme="@style/Theme.Material3.DayNight"
+                            tools:ignore="RtlSymmetry" />
+
+                        <ImageView
+                            android:id="@+id/showPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="-24dp"
+                            android:padding="4dp"
+                            android:src="@drawable/img_eye"
+                            tools:ignore="ContentDescription,ImageContrastCheck" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/btnForgotPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/forgot_password"
+                            android:textColor="@color/hintTextColor"
+                            android:textSize="@dimen/fs8"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TextContrastCheck" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pnConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/edtConfirmPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="@string/confirm_password"
+                            android:importantForAutofill="no"
+                            android:inputType="numberPassword"
+                            android:paddingEnd="9dp"
+                            android:textColor="@color/primaryTextColor"
+                            android:textColorHint="@color/hintTextColor"
+                            android:textSize="@dimen/fs10"
+                            android:theme="@style/Theme.Material3.DayNight"
+                            tools:ignore="RtlSymmetry" />
+
+                        <ImageView
+                            android:id="@+id/showConfirmPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="-24dp"
+                            android:padding="4dp"
+                            android:src="@drawable/img_eye"
+                            tools:ignore="ContentDescription,ImageContrastCheck" />
+                    </LinearLayout>
+
+
+                    <vn.savis.donut.mobile.UI.Components.PrimaryButton
+                        android:id="@+id/btnMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="47dp"
+                        android:text="@string/sign_in" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="59dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:background="@color/hintTextColor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="10dp"
+                            android:text="@string/or"
+                            android:textColor="@color/hintTextColor" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:background="@color/hintTextColor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="35dp">
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_toggle_24_share"
+                            android:padding="@dimen/pd8"
+                            android:src="@drawable/img_facebook"
+                            tools:ignore="ContentDescription" />
+
+                        <View
+                            android:layout_width="11dp"
+                            android:layout_height="wrap_content" />
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_toggle_24_share"
+                            android:padding="@dimen/pd8"
+                            android:src="@drawable/img_google"
+                            tools:ignore="ContentDescription" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
